@@ -39,11 +39,11 @@ enum jsmnerr {
  */
 typedef struct {
 	jsmntype_t type;
-	int start;
-	int end;
-	int size;
+	short int start;
+	short int end;
+	short int size;
 #ifdef JSMN_PARENT_LINKS
-	int parent;
+	short int parent;
 #endif
 } jsmntok_t;
 
@@ -52,9 +52,9 @@ typedef struct {
  * the string being parsed now and current position in that string
  */
 typedef struct {
-	unsigned int pos; /* offset in the JSON string */
-	unsigned int toknext; /* next token to allocate */
-	int toksuper; /* superior token node, e.g parent object or array */
+	unsigned short int pos; /* offset in the JSON string */
+	unsigned short int toknext; /* next token to allocate */
+	short int toksuper; /* superior token node, e.g parent object or array */
 } jsmn_parser;
 
 /**
